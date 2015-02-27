@@ -13,7 +13,13 @@ This repository contains **Dockerfile** of [Elasticsearch](http://www.elasticsea
 
 1. Install [Docker](https://www.docker.com/).
 
-2. Download [automated build](https://registry.hub.docker.com/u/dockerfile/elasticsearch/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull dockerfile/elasticsearch`
+2. `git clone https://github.com/weij/dockerfile.git`, then `cd elasticsearch`
+
+3. build an image from Dockerfile: `docker build -t weij/elasticsearch .`
+
+Alternatively...
+
+Download [automated build](https://registry.hub.docker.com/u/dockerfile/elasticsearch/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull dockerfile/elasticsearch`
 
    (alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/elasticsearch" github.com/dockerfile/elasticsearch`)
 
@@ -41,3 +47,7 @@ This repository contains **Dockerfile** of [Elasticsearch](http://www.elasticsea
     ```
 
 After few seconds, open `http://<host>:9200` to see the result.
+
+## Known Challenges
+  1. You are noticed with "Authentication is required" error message, when you try to build an image from the Dockerfile here. Try "docker login".
+
