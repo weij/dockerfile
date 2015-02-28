@@ -8,7 +8,8 @@
 # Pull base image.
 FROM dockerfile/java:oracle-java8
 
-MAINTAINER Weijun Yin "gw9812@gmail.com"
+MAINTAINER Weijun Yin <gw9812@gmail.com>
+
 ENV REFRESHED_AT 2015-02-26
 
 ENV ES_PKG_NAME elasticsearch-1.4.4
