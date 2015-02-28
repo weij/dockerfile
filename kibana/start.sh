@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export ELASTICSEARCH=${ELASTICSEARCH:-http://192.168.59.103:9200/}
+export ELASTICSEARCH=${ELASTICSEARCH:-http://localhost:9200/}
 export KIBANA_INDEX=${KIBANA_INDEX:-.kibana}
 export DEFAULT_APP_ID=${DEFAULT_APP_ID:-discover}
 export REQUEST_TIMEOUT=${REQUEST_TIMEOUT:-300000}
