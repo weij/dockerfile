@@ -1,18 +1,14 @@
-FROM java:openjdk-7u71-jre
+FROM java:8
 
 MAINTAINER Weijun Yin <weijun.yin@gmail.com>
 
-RUN apt-get update -q && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    curl nano
-
 ENV KIBANA_VERSION 4.0.0-linux-x64
 
-RUN curl https://download.elasticsearch.org/kibana/kibana/kibana-$KIBANA_VERSION.tar.gz | tar xz -C /tmp
-RUN mv /tmp/kibana-* /app
+RUN curl https://download.elasticsearch.org/kibana/kibana/kibana-${KIBANA_VERSION}.tar.gz | tar zx -C /opt
 
-ADD start.sh /start.sh
-RUN chmod +x /start.sh
-CMD '/start.sh'
+ADD ./run.sh /run.sh
+RUN chmod +x /run.sh
 
 EXPOSE 5601
+
+ENTRYPOINT /run.sh
